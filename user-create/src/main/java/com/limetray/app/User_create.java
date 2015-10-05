@@ -32,7 +32,7 @@ public class User_create extends send_email_api_output {
 	
 	public static void user_check()
 	{
-		 String url = "http://tests.crm.limetray.in/crm/public/user/fetch/540340";
+		 String url = "http://test.crm.limetray.in/crm/public/user/fetch/540340";
 		
 		 try
 		 
@@ -105,7 +105,7 @@ public class User_create extends send_email_api_output {
 			name = new Object(){}.getClass().getEnclosingMethod().getName();
 			String public_key = "crm";
 		        String private_key = "6OXsajdlsFnFZjeyRb9k";
-		        URL url = new URL("http://testssdsf.crm.limetray.in/crm/public/user/create");
+		        URL url = new URL("http://test.crm.limetray.in/crm/public/user/create");
 		        
 		        HttpURLConnection myURLConnection = (HttpURLConnection)url.openConnection();
 		        myURLConnection.setDoOutput(true);
@@ -121,7 +121,7 @@ public class User_create extends send_email_api_output {
 		   //    System.out.println(random_number_generation);
 		        add.put("user_number", random_number_generation);
 		        add.put("cloud_site_id", "230");
-		        add.put("user_source", "5");
+		        add.put("user_source", "fgfdhgf");
 		        
 		      
 //		        
