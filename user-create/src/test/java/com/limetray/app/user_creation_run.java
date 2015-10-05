@@ -3,7 +3,7 @@ package com.limetray.app;
 import org.testng.annotations.Test;
 import org.testng.annotations.Test;
 
-public class user_creation_run {
+ public class user_creation_run {
   @SuppressWarnings("static-access")
 @Test(priority=0)
   
@@ -13,10 +13,8 @@ public void user_creation_testng() {
    
    user_create_object.user_creation();
   
-	  
-  
   }
-
+/*
 @SuppressWarnings("static-access")
 
 @Test(priority=1)
@@ -30,5 +28,5 @@ public void user_creation_send_email()
   
 	}catch(Exception e){System.out.println(e);}
 }
-
+*/
 }

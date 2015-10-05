@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.io.StringWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -13,6 +14,7 @@ import java.util.Iterator;
 import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.JsonParser;
 import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.plexus.util.IOUtil;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
@@ -105,7 +107,7 @@ public class User_create extends send_email_api_output {
 			name = new Object(){}.getClass().getEnclosingMethod().getName();
 			String public_key = "crm";
 		        String private_key = "6OXsajdlsFnFZjeyRb9k";
-		        URL url = new URL("http://test.crm.limetray.in/crm/public/user/create");
+		        URL url = new URL("http://test.crm.limetraydd.in/crm/public/user/create");
 		        
 		        HttpURLConnection myURLConnection = (HttpURLConnection)url.openConnection();
 		        myURLConnection.setDoOutput(true);
@@ -121,7 +123,7 @@ public class User_create extends send_email_api_output {
 		   //    System.out.println(random_number_generation);
 		        add.put("user_number", random_number_generation);
 		        add.put("cloud_site_id", "230");
-		        add.put("user_source", "fgfdhgf");
+		        add.put("user_source", "6");
 		        
 		      
 //		        
@@ -272,7 +274,7 @@ public class User_create extends send_email_api_output {
 		 	       
 		 		sb_user_create.append(System.lineSeparator());
 				
-		 		sb_user_create.append("Result :" +" "+ "User successfully created and details validate by automation script.");
+		 		sb_user_create.append("Result :" +" "+ "User successfully created and their details validate by automation script.");
 		 	       sb_user_create.append(System.lineSeparator());
 					
 		 	        sb_user_create.append("===================================================================================");
@@ -302,11 +304,27 @@ public class User_create extends send_email_api_output {
 		        
 		        else{
 		         
+		        	try 
+		        	{
 		        	System.out.println("Status is not 200");
 		        	System.out.println("Something went wrong");
-		        	getContent = myURLConnection.getErrorStream();
-		        	 myURLConnection.setConnectTimeout(1000);  
-		            
+		        sb_user_status_not_200.append("==============================================================");
+		        sb_user_status_not_200.append(System.lineSeparator());
+			       
+		        	sb_user_status_not_200.append("Unable to create user by user manager api");
+		        sb_user_status_not_200.append(System.lineSeparator());
+		        sb_user_status_not_200.append("Response code is :"+" "+myURLConnection.getResponseCode());
+		        sb_user_status_not_200.append(System.lineSeparator());
+		        sb_user_status_not_200.append("Something went wrong please check");
+		        sb_user_status_not_200.append(System.lineSeparator());
+			       
+		        sb_user_status_not_200.append("==============================================================");
+			    auto_email_error_notification_status_not_200(); 
+		        
+		        //	auto_email_error_notification(getContent, name);
+		        	// myURLConnection.setConnectTimeout(1000);  
+	                      System.exit(0); 
+		        	}catch(Exception e){System.out.println(e); exception_method(e);}
 		        }
 			
 			

@@ -29,6 +29,7 @@ public class send_email_api_output {
 	
    public static StringBuilder sb_email_text = new StringBuilder();
    public static StringBuilder sb_user_create = new StringBuilder();
+   public static StringBuilder sb_user_status_not_200 = new StringBuilder();
    public static String name;
    public static int response_code;
 
@@ -166,6 +167,62 @@ public class send_email_api_output {
 	}
 
 
+
+	public static void auto_email_error_notification_status_not_200 ()
+
+	{
+		
+		final String username = "vivekpasi.limetray@gmail.com";
+		final String password = "login1-2";
+
+		Properties props = new Properties();
+		props.put("mail.smtp.auth", "true");
+		props.put("mail.smtp.starttls.enable", "true");
+		props.put("mail.smtp.host", "smtp.gmail.com");
+		props.put("mail.smtp.port", "587");
+
+		Session session = Session.getInstance(props,
+		  new javax.mail.Authenticator() {
+			protected PasswordAuthentication getPasswordAuthentication() {
+				return new PasswordAuthentication(username, password);
+			}
+		  });
+
+		try {
+
+			
+			
+			//String[] toEmails = {"vivekpasi.limetray@gmail.com","gaurav.sahai.limetray@gmail.com"};
+			Message message = new MimeMessage(session);
+			message.setFrom(new InternetAddress("vivek.pasi@limetray.com"));
+
+         message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("vivekpasi.limetray@gmail.com"));
+        // String address = "gaurav.sahai.limetray@gmail.com,yashbir.limetray@gmail.com,himanshu.limetray@gmail.com,yashwant@limetray.com";
+         String address = "vivek.pasi@limetray.com, yashbir.limetray@gmail.com";
+         
+         InternetAddress[] iAdressArray = InternetAddress.parse(address);
+         message.setRecipients(Message.RecipientType.CC, iAdressArray);
+		
+         SimpleDateFormat dateformat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+         String current_date_time = dateformat.format(new Date());
+         
+        message.setSubject("Error notification of user manager API "+" " +"at" +" " + current_date_time );
+        
+       		//message.setText("Response Code :"+ response_code +"\n" +"Method name exception occur :"+" "+ method_name + " \n\n"+a);
+       String email_text_status_nt_200 =sb_user_status_not_200.toString();
+			message.setText(email_text_status_nt_200);
+        
+        Transport.send(message);
+			
+			System.out.println("Done");
+			
+        //     return a;
+             
+		} catch (MessagingException e) {
+			throw new RuntimeException(e);
+		}
+	}
+	
 	public static void auto_email_user_create () throws IOException
 
 	{
@@ -210,6 +267,15 @@ public class send_email_api_output {
          //sb.append("1236547").append(System.lineSeparator());
         // sb.append("Here is another text");
 
+System.out.println(sb_user_create);          
+         if(sb_user_create == null)
+         {
+        	 System.out.println("Nothing in string buffer");
+        	 System.exit(0);
+        	 
+         }
+         
+         
          message.setText(sb_user_create.toString());  
 	//message.setText("Method name exception occur :"+" "+ method_name + " \n\n"+a);
          
