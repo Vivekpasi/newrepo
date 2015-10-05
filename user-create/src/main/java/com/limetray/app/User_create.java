@@ -105,7 +105,7 @@ public class User_create extends send_email_api_output {
 			name = new Object(){}.getClass().getEnclosingMethod().getName();
 			String public_key = "crm";
 		        String private_key = "6OXsajdlsFnFZjeyRb9k";
-		        URL url = new URL("http://test.crm.limetray.in/crm/public/user/create");
+		        URL url = new URL("http://testssdsf.crm.limetray.in/crm/public/user/create");
 		        
 		        HttpURLConnection myURLConnection = (HttpURLConnection)url.openConnection();
 		        myURLConnection.setDoOutput(true);
