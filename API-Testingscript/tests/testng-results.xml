@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="8" passed="8">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="17099" started-at="2015-09-16T11:32:50Z" finished-at="2015-09-16T11:33:07Z">
+    <groups>
+    </groups>
+    <test name="APITest" duration-ms="17099" started-at="2015-09-16T11:32:50Z" finished-at="2015-09-16T11:33:07Z">
+      <class name="com.limetray.app.Validation_api_error_check">
+        <test-method status="PASS" signature="Mobile_validation_check()[pri:0, instance:com.limetray.app.Validation_api_error_check@1ffcba5]" name="Mobile_validation_check" duration-ms="3468" started-at="2015-09-16T17:02:50Z" finished-at="2015-09-16T17:02:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Mobile_validation_check -->
+        <test-method status="PASS" signature="user_source_validation_check()[pri:1, instance:com.limetray.app.Validation_api_error_check@1ffcba5]" name="user_source_validation_check" duration-ms="1017" started-at="2015-09-16T17:02:53Z" finished-at="2015-09-16T17:02:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- user_source_validation_check -->
+        <test-method status="PASS" signature="user_email_validation()[pri:2, instance:com.limetray.app.Validation_api_error_check@1ffcba5]" name="user_email_validation" duration-ms="554" started-at="2015-09-16T17:02:55Z" finished-at="2015-09-16T17:02:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- user_email_validation -->
+        <test-method status="PASS" signature="user_cloud_site_validation()[pri:3, instance:com.limetray.app.Validation_api_error_check@1ffcba5]" name="user_cloud_site_validation" duration-ms="1016" started-at="2015-09-16T17:02:55Z" finished-at="2015-09-16T17:02:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- user_cloud_site_validation -->
+        <test-method status="PASS" signature="combination_mobile_email_validation()[pri:4, instance:com.limetray.app.Validation_api_error_check@1ffcba5]" name="combination_mobile_email_validation" duration-ms="1053" started-at="2015-09-16T17:02:56Z" finished-at="2015-09-16T17:02:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- combination_mobile_email_validation -->
+        <test-method status="PASS" signature="combination_mobile_cloud_site_validation()[pri:5, instance:com.limetray.app.Validation_api_error_check@1ffcba5]" name="combination_mobile_cloud_site_validation" duration-ms="1110" started-at="2015-09-16T17:02:57Z" finished-at="2015-09-16T17:02:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- combination_mobile_cloud_site_validation -->
+        <test-method status="PASS" signature="combination_mobile_firstname_validation()[pri:6, instance:com.limetray.app.Validation_api_error_check@1ffcba5]" name="combination_mobile_firstname_validation" duration-ms="1155" started-at="2015-09-16T17:02:58Z" finished-at="2015-09-16T17:02:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- combination_mobile_firstname_validation -->
+        <test-method status="PASS" signature="send_email_script_output()[pri:7, instance:com.limetray.app.Validation_api_error_check@1ffcba5]" name="send_email_script_output" duration-ms="7622" started-at="2015-09-16T17:02:59Z" finished-at="2015-09-16T17:03:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- send_email_script_output -->
+      </class> <!-- com.limetray.app.Validation_api_error_check -->
+    </test> <!-- APITest -->
+  </suite> <!-- Suite -->
+</testng-results>
